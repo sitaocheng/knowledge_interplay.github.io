@@ -1,14 +1,17 @@
 # Nerfies
 
-This is the repository that contains source code for the [Nerfies website](https://nerfies.github.io).
+This is the repository that contains source code for the paper "Understanding the Interplay between Parametric and Contextual Knowledge for Large Language Models"[Link](https://arxiv.org/abs/2410.08414).
 
 If you find Nerfies useful for your work please cite:
 ```
-@article{park2021nerfies
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+@misc{cheng2024understandinginterplayparametriccontextual,
+      title={Understanding the Interplay between Parametric and Contextual Knowledge for Large Language Models}, 
+      author={Sitao Cheng and Liangming Pan and Xunjian Yin and Xinyi Wang and William Yang Wang},
+      year={2024},
+      eprint={2410.08414},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2410.08414}, 
 }
 ```
 
