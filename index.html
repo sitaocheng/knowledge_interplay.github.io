@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="description"
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="keywords" content="Parametric Knowledge, Contextual Knowledge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <title>Knowledge_Interplay</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -50,33 +50,6 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
-  <!-- <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <!-- <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div> -->
 
 </nav>
 
@@ -161,7 +134,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-        <iframe src="./static/images/main_example_echoqa.pdf" width="100%" height="300px"></iframe>
+        <iframe src="./static/images/main_example_echoqa.pdf" width="100%" height="350px"></iframe>
       <h2 class="subtitle has-text-centered">
         We extract Parametric Knowledge (PK) for commonly-used LLMs, and construct Contextual Knowledge (CK) and questions to test LLMs ability to output their PK when CK is given.
       </h2>
@@ -220,7 +193,7 @@
 
 
       <div class="column is-full-width">
-        <h2 class="title is-4">Key Findings</h2>
+        <h2 class="title is-3">Key Findings</h2>
 
         <!-- Interpolating. -->
         <div class="content has-text-justified">
@@ -232,7 +205,7 @@
       
         <div class="content has-text-justified">
           <p>
-            LLMs are more likely to recall their knowledge for some knowledge and reasoning types, \textit{e.g.,} the commonsense knowledge. We find evidence indicating that the reason behind is likely the imbalance of knowledge in training corpus. 
+            LLMs are more likely to recall their knowledge for some knowledge and reasoning types, e.g., the commonsense knowledge. We find evidence indicating that the reason behind is likely the imbalance of knowledge in training corpus. 
           </p>
         </div>
 
@@ -241,6 +214,59 @@
         Explicit instruction can help LLMs remember more PK, but still way off from fully leveraging PK. This implies more sophisticated prompt or framework design has the potential to solve this problem to a larger extent.
           </p>
         </div>
+
+
+        <table>
+          <caption>
+              Definition, example and metric of our reasoning types over various relationships between <code>CK</code> and <code>PK</code>. Note that we ensure <code>PK</code> is known by LLMs and not shown in context. <code>U_R</code>, <code>M_R</code>, <code>A<sub>ck</sub></code>, <code>A<sub>pk</sub></code> denote unknown ratio, memorization ratio, answers faithful to <code>CK</code> and <code>PK</code>, respectively.
+          </caption>
+          <thead>
+              <tr>
+                  <th>Reasoning Type</th>
+                  <th>Example</th>
+                  <th>Metric</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td><i>Supportive</i> (<code>CK ⊙ PK</code>)</td>
+                  <td>
+                      <strong>Q</strong>: What's the shape of the earth? <strong>A</strong>: Spherical<br>
+                      <strong>CK</strong>: The earth is spherical.<br>
+                      <strong>PK</strong>: The earth is spherical.
+                  </td>
+                  <td><code>Acc, U_R</code></td>
+              </tr>
+              <tr>
+                  <td><i>Complementary</i> (<code>CK ∧ PK</code>)</td>
+                  <td>
+                      <strong>Q</strong>: The shape of the planet <code>Z-man</code> was born on? <strong>A</strong>: Spherical<br>
+                      <strong>CK</strong>: <code>Z-man</code> was born on earth.<br>
+                      <strong>PK</strong>: The earth is spherical.
+                  </td>
+                  <td><code>Acc, U_R</code></td>
+              </tr>
+              <tr>
+                  <td><i>Conflicting</i> (<code>CK ⊕ PK</code>)</td>
+                  <td>
+                      <strong>Q</strong>: What's the shape of the earth? <strong>A<sub>ck</sub></strong>: Flat; <strong>A<sub>pk</sub></strong>: Spherical<br>
+                      <strong>CK</strong>: The earth is flat.<br>
+                      <strong>PK</strong>: The earth is spherical.
+                  </td>
+                  <td><code>M_R</code></td>
+              </tr>
+              <tr>
+                  <td><i>Irrelevant</i> (<code>CK ∨ PK</code>)</td>
+                  <td>
+                      <strong>Q</strong>: What's the shape of the earth? <strong>A</strong>: Spherical<br>
+                      <strong>CK</strong>: The earth orbits around the sun.<br>
+                      <strong>PK</strong>: The earth is spherical.
+                  </td>
+                  <td><code>Acc, U_R</code></td>
+              </tr>
+          </tbody>
+      </table>
+
 
         <h2 class="title is-3">Detailed Results</h2>
 
