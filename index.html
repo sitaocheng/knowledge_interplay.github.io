@@ -32,7 +32,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -134,7 +134,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-        <iframe src="./static/images/main_example_echoqa.pdf" width="100%" height="350px"></iframe>
+        <iframe src="./static/images/main_example_echoqa.pdf" width="100%" height="320px"></iframe>
       <h2 class="subtitle has-text-centered">
         We extract Parametric Knowledge (PK) for commonly-used LLMs, and construct Contextual Knowledge (CK) and questions to test LLMs ability to output their PK when CK is given.
       </h2>
@@ -216,56 +216,9 @@
         </div>
 
 
-        <table>
-          <caption>
-              Definition, example and metric of our reasoning types over various relationships between <code>CK</code> and <code>PK</code>. Note that we ensure <code>PK</code> is known by LLMs and not shown in context. <code>U_R</code>, <code>M_R</code>, <code>A<sub>ck</sub></code>, <code>A<sub>pk</sub></code> denote unknown ratio, memorization ratio, answers faithful to <code>CK</code> and <code>PK</code>, respectively.
-          </caption>
-          <thead>
-              <tr>
-                  <th>Reasoning Type</th>
-                  <th>Example</th>
-                  <th>Metric</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td><i>Supportive</i> (<code>CK ⊙ PK</code>)</td>
-                  <td>
-                      <strong>Q</strong>: What's the shape of the earth? <strong>A</strong>: Spherical<br>
-                      <strong>CK</strong>: The earth is spherical.<br>
-                      <strong>PK</strong>: The earth is spherical.
-                  </td>
-                  <td><code>Acc, U_R</code></td>
-              </tr>
-              <tr>
-                  <td><i>Complementary</i> (<code>CK ∧ PK</code>)</td>
-                  <td>
-                      <strong>Q</strong>: The shape of the planet <code>Z-man</code> was born on? <strong>A</strong>: Spherical<br>
-                      <strong>CK</strong>: <code>Z-man</code> was born on earth.<br>
-                      <strong>PK</strong>: The earth is spherical.
-                  </td>
-                  <td><code>Acc, U_R</code></td>
-              </tr>
-              <tr>
-                  <td><i>Conflicting</i> (<code>CK ⊕ PK</code>)</td>
-                  <td>
-                      <strong>Q</strong>: What's the shape of the earth? <strong>A<sub>ck</sub></strong>: Flat; <strong>A<sub>pk</sub></strong>: Spherical<br>
-                      <strong>CK</strong>: The earth is flat.<br>
-                      <strong>PK</strong>: The earth is spherical.
-                  </td>
-                  <td><code>M_R</code></td>
-              </tr>
-              <tr>
-                  <td><i>Irrelevant</i> (<code>CK ∨ PK</code>)</td>
-                  <td>
-                      <strong>Q</strong>: What's the shape of the earth? <strong>A</strong>: Spherical<br>
-                      <strong>CK</strong>: The earth orbits around the sun.<br>
-                      <strong>PK</strong>: The earth is spherical.
-                  </td>
-                  <td><code>Acc, U_R</code></td>
-              </tr>
-          </tbody>
-      </table>
+        <!-- <h2 class="title is-3">Setups</h2> -->
+
+
 
 
         <h2 class="title is-3">Detailed Results</h2>
