@@ -161,7 +161,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-        <embed src="./static/images/main_example_echoqa.pdf" type="application/pdf" width="100%" height="300px" />
+        <iframe src="./static/images/main_example_echoqa.pdf" width="100%" height="1000px"></iframe>
       <h2 class="subtitle has-text-centered">
         We extract Parametric Knowledge (PK) for commonly-used LLMs, and construct Contextual Knowledge (CK) and questions to test LLMs ability to output their PK when CK is given.
       </h2>
@@ -219,30 +219,27 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
       </div>
-        <h2 class="title is-3">Main Findings</h2>
+        <h2 class="title is-4">Key Findings</h2>
 
         <!-- Interpolating. -->
-        <h3 class="title is-4"></h3>
         <div class="content has-text-justified">
           <p>
             The suppression of PK in the presence of CK is universal, regardless of the model, knowledge type or reasoning type (Complementary, Conflicting or Irrelevant). LLMs disregard their own knowledge, e.g., more than 60% of cases in scientific knowledge for all tested models, relying solely on the context for reasoning. This highlights the vulnerability of LLMs in leveraging PK.
           </p>
         </div>
+
        
-        <h3 class="title is-4"></h3>
         <div class="content has-text-justified">
           <p>
             LLMs are more likely to recall their knowledge for some knowledge and reasoning types, \textit{e.g.,} the commonsense knowledge. We find evidence indicating that the reason behind is likely the imbalance of knowledge in training corpus. 
           </p>
         </div>
 
-        <h3 class="title is-4"></h3>
         <div class="content has-text-justified">
           <p> 
         Explicit instruction can help LLMs remember more PK, but still way off from fully leveraging PK. This implies more sophisticated prompt or framework design has the potential to solve this problem to a larger extent.
           </p>
         </div>
-
 
       </div>
 
