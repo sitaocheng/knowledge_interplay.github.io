@@ -198,7 +198,8 @@
         <!-- Interpolating. -->
         <div class="content has-text-justified">
           <p>
-            The suppression of PK in the presence of CK is universal, regardless of the model, knowledge type or reasoning type (Complementary, Conflicting or Irrelevant). LLMs disregard their own knowledge, e.g., more than 60% of cases in scientific knowledge for all tested models, relying solely on the context for reasoning. This highlights the vulnerability of LLMs in leveraging PK.
+            <!-- bold -->
+             <span class="is-bold">Most LLMs struggled to follow instructions to truthfully output their internal knowledge,</span> regardless of the model, knowledge type or reasoning type (Complementary, Conflicting or Irrelevant). LLMs disregard their own knowledge, e.g., more than 60% of cases in scientific knowledge for all tested models, relying solely on the context for reasoning. This highlights the vulnerability of LLMs in leveraging PK.
           </p>
         </div>
 
@@ -211,7 +212,7 @@
 
         <div class="content has-text-justified">
           <p> 
-        Explicit instruction can help LLMs remember more PK, but still way off from fully leveraging PK. This implies more sophisticated prompt or framework design has the potential to solve this problem to a larger extent.
+          Explicit instruction can help LLMs remember more PK, but still way off from fully leveraging PK. This implies more sophisticated prompt or framework design has the potential to solve this problem to a larger extent.
           </p>
         </div>
 
@@ -225,12 +226,33 @@
 
         <!-- Interpolating. -->
         <h3 class="title is-4">For Complementary Reasoning</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+              <iframe src="./static/images/model_performance_bars_2x2.pdf" width="100%" height="320px"></iframe>
+            <h2 class="subtitle has-text-centered">
+              Although provided with complementary context, LLMs leverage of their own knowledge remains inhibited.
+            </h2>
+          </div>
+        </div>
+
+        <h3 class="title is-4">For Conflicting Reasoning</h3>
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+              <iframe src="./static/images/conflict_2x2.pdf" width="100%" height="320px"></iframe>
+            <h2 class="subtitle has-text-centered">
+              LLMs rarely trust themselves when faced with conflicting context.
+            </h2>
+          </div>
+        </div>
+
+        <h3 class="title is-4">For Irrelevant Reasoning</h3>
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+              <iframe src="./static/images/irrelevant_acc_2x2.pdf" width="100%" height="320px"></iframe>
+            <h2 class="subtitle has-text-centered">
+              Although grasping the key to the knowledge, LLMs still seek answers in the irrelevant context.
+            </h2>
+          </div>
         </div>
         <!-- <div class="columns is-vcentered interpolation-panel">
           <div class="column is-3 has-text-centered">
